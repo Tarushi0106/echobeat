@@ -1,9 +1,14 @@
 import React from 'react';
+<<<<<<< HEAD
 
+=======
+// import './about.css';
+>>>>>>> 106880b (Add existing project files to Git)
 export const About = () => {
   return (
     <>
       
+<<<<<<< HEAD
       
 
       <div className="main row mt-5">
@@ -81,3 +86,69 @@ export const About = () => {
     </>
   );
 };
+=======
+
+      <main>
+        {/* Swiper Section */}
+        <section className="swiper">
+          <div className="swiper-wrapper">
+            {['img1.jpg', 'image2.jpg', 'image3.jpg'].map((image, index) => (
+              <div className="swiper-slide" key={index}>
+                <img src={`main-images/${image}`} alt="Travel Slide" />
+                <div className="img-overlay">
+                  <p>Let's Travel The World With Us</p>
+                  <h2>Discover The World With Our Guide</h2>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="swiper-pagination"></div>
+          <div className="swiper-button-prev"></div>
+          <div className="swiper-button-next"></div>
+        </section>
+
+        {/* About Us Section */}
+        <section id="about-us" className="about-container">
+          <div className="about-content">
+            <p className="heading-1">THE BEST MUSIC APP </p>
+            <h2 className="heading-2">
+              Explore the <span>Globe</span> with Our Experts
+            </h2>
+            <p>
+              At ECHOBEAT, we believe that the world is meant to be explored.
+              With our team of faboulous singers, embark on a journey
+              that transcends borders and opens doors to unforgettable
+              experiences...
+            </p>
+            <p> Launching Great Singers To showcase the world their talent  | Stream Music Now </p>
+            <p>Contact us: +876 574 8934 | +983 749 3930</p>
+          </div>
+        </section>
+
+        {/* Destination Cards Section */}
+        <section id="place-choice">
+          <div className="container-2">
+            <p className="heading-1">CHOOSE YOUR SONG</p>
+            <h2 className="heading-2">Popular <span>MUSIC</span> ONLY FOR YOU</h2>
+            <div className="choice-wrapper">
+              {[
+                { title: 'Maldives Tour', price: '₹ 1,60,000', img: 'maldives.jpg' },
+                { title: 'UK Tour', price: '₹ 1,55,000', img: 'uk.jpg' },
+            
+              ].map((destination, idx) => (
+                <div className="tour-card" key={idx}>
+                  <img src={`images/${destination.img}`} alt={destination.title} />
+                  <div className="img-content">
+                    <h2>{destination.title}</h2>
+                    <p>{destination.price} / person</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+};
+>>>>>>> 106880b (Add existing project files to Git)
