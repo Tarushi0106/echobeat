@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-// EchoBeat.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import './home.css';
 import logo from './logo.png';
-import logoTab from './logo-tab.png';
-=======
-import React, { useState, useEffect, useRef } from 'react';
-import './home.css';
-import logo from './logo.png';
->>>>>>> 106880b (Add existing project files to Git)
 import shuffleIcon from './shufflenew.png';
 import prevIcon from './prevnew.png';
 import playIcon from './playnew.png';
@@ -24,16 +16,11 @@ const EchoBeat = () => {
   const [isShuffling, setIsShuffling] = useState(false);
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [playlist, setPlaylist] = useState([song1, song2, song3]);
-<<<<<<< HEAD
   const [songHistory, setSongHistory] = useState([]); // Stack to keep track of history
+
   const audioRef = useRef(new Audio(playlist[currentSongIndex])); // Reference for audio
 
   // Load the current song when the currentSongIndex changes
-=======
-  const [songHistory, setSongHistory] = useState([]);
-  const audioRef = useRef(new Audio(playlist[currentSongIndex]));
-
->>>>>>> 106880b (Add existing project files to Git)
   useEffect(() => {
     audioRef.current.src = playlist[currentSongIndex];
     if (isPlaying) {
@@ -41,10 +28,7 @@ const EchoBeat = () => {
     }
   }, [currentSongIndex, isPlaying]);
 
-<<<<<<< HEAD
-  // Toggle Play/Pause
-=======
->>>>>>> 106880b (Add existing project files to Git)
+  // Update song history and manage song playback state
   const togglePlayPause = () => {
     if (isPlaying) {
       audioRef.current.pause();
@@ -54,33 +38,20 @@ const EchoBeat = () => {
     setIsPlaying(!isPlaying);
   };
 
-<<<<<<< HEAD
   // Play Next Song
   const playNext = () => {
     setSongHistory([...songHistory, currentSongIndex]);
-    let nextIndex;
-    if (isRepeating) {
-      nextIndex = (currentSongIndex + 1) % playlist.length; // Circular playback
-    } else {
-      nextIndex = currentSongIndex + 1 < playlist.length ? currentSongIndex + 1 : 0;
-    }
-=======
-  const playNext = () => {
-    setSongHistory([...songHistory, currentSongIndex]);
     let nextIndex = isRepeating
-      ? (currentSongIndex + 1) % playlist.length
+      ? (currentSongIndex + 1) % playlist.length // Circular playback
       : currentSongIndex + 1 < playlist.length
       ? currentSongIndex + 1
       : 0;
->>>>>>> 106880b (Add existing project files to Git)
+
     setCurrentSongIndex(nextIndex);
     setIsPlaying(true);
   };
 
-<<<<<<< HEAD
   // Play Previous Song
-=======
->>>>>>> 106880b (Add existing project files to Git)
   const playPrevious = () => {
     if (songHistory.length > 0) {
       const previousSongIndex = songHistory.pop();
@@ -90,10 +61,7 @@ const EchoBeat = () => {
     }
   };
 
-<<<<<<< HEAD
   // Shuffle Playlist function using Fisher-Yates Shuffle
-=======
->>>>>>> 106880b (Add existing project files to Git)
   const shufflePlaylist = () => {
     let shuffled = [...playlist];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -105,34 +73,23 @@ const EchoBeat = () => {
     setIsShuffling(true);
   };
 
-<<<<<<< HEAD
   // Toggle Repeat Mode
-=======
->>>>>>> 106880b (Add existing project files to Git)
   const toggleRepeat = () => {
     setIsRepeating(!isRepeating);
   };
 
   return (
     <>
-<<<<<<< HEAD
       <header>
         <title>EchoBeat</title>
       </header>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        {/* Add Navbar content */}
-      </nav>
 
-      <div className="sidebar">
-        {/* Add sidebar content here if needed */}
-=======
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid mainnav">
           <a className="navbar-brand mb-1 logo" href="/index.html">
             <img src={logo} className="logo-img" alt="EchoBeat Logo" />
             &nbsp; EchoBeat
           </a>
-         
           <div>
             <span className="navbar-nav me-auto mb-2 mb-lg-0">
               <a className="nav-item nav-link" href="#">username</a>
@@ -142,9 +99,6 @@ const EchoBeat = () => {
       </nav>
 
       <div className="main">
-        <div className="sidebar">
-          {/* Add sidebar content here */}
-        </div>
         <div className="main-content">
           <h4>Recently Played</h4>
           <div className="cards-container">
@@ -185,7 +139,6 @@ const EchoBeat = () => {
             </div>
           </div>
         </div>
->>>>>>> 106880b (Add existing project files to Git)
       </div>
 
       <div className="musicplayer">
@@ -209,14 +162,9 @@ const EchoBeat = () => {
             <span className="tot-time time">3.33</span>
           </div>
         </div>
-<<<<<<< HEAD
-        <div className="controls"></div>
-=======
->>>>>>> 106880b (Add existing project files to Git)
       </div>
     </>
   );
 };
 
 export default EchoBeat;
-

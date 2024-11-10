@@ -4,7 +4,7 @@ const authControllers = require("../controllers/auth-controller");
 const validate = require("../middlewares/validate-middleware");
 const signupSchema = require("../validators/auth-validators");
 
-router.route("/").get(authControllers.Home);
+router.route("/").get(authControllers.home);
 router
   .route("/register")
   .post(validate(signupSchema), authControllers.register);

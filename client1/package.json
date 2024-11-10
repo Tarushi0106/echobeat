@@ -13,12 +13,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.1",
-<<<<<<< HEAD
-    "react-toastify": "^10.0.5"
-=======
     "react-toastify": "^10.0.5",
     "vite": "^5.4.10"
->>>>>>> 106880b (Add existing project files to Git)
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
@@ -27,11 +23,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
-<<<<<<< HEAD
     "eslint-plugin-react-refresh": "^0.4.7",
     "vite": "^5.4.10"
-=======
-    "eslint-plugin-react-refresh": "^0.4.7"
->>>>>>> 106880b (Add existing project files to Git)
   }
 }
