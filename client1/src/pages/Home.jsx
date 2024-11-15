@@ -9,6 +9,7 @@ import repeatIcon from './repeatnew.png';
 import song1 from './song1.mp3';
 import song2 from './song2.mp3';
 import song3 from './song3.mp3';
+import imagee from './card3img.jpeg';
 
 const EchoBeat = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -20,7 +21,6 @@ const EchoBeat = () => {
   const [currentTime, setCurrentTime] = useState(0); // For tracking current playback time
   const [duration, setDuration] = useState(0); // For the total song duration
 
-  const audioReff = useRef(null);
   const audioRef = useRef(new Audio(playlist[currentSongIndex])); // Reference for audio
 
   // Load the current song when the currentSongIndex changes
@@ -101,6 +101,20 @@ const EchoBeat = () => {
     audioRef.current.currentTime = newTime;
   };
 
+  const audioReff = useRef(null);
+  const playSong = (audioname) => {
+    // Set the new audio source
+    // setAudioSrc(audioname);
+    audioRef.current.src = audioname;
+    // Play the audio
+    if (audioReff.current) {
+      audioReff.current.play();
+    }
+
+    // Update the play state
+    setIsPlaying(true);
+  };
+
   return (
     <>
       <header>
@@ -112,8 +126,8 @@ const EchoBeat = () => {
         <div className="main-content">
           <h4>Recently Played</h4>
           <div className="cards-container">
-            <div className="card" onClick={() => window.location.href = 'abc.html'}>
-              <img src="assets/abcc.jpeg" className="card-image" alt="Top 50 - Global" />
+            <div className="card" onClick={() => playSong(song1)}>
+              <img src={imagee} className="card-image" alt="Top 50 - Global" />
               <p className="card-title">Top 50 - Global</p>
               <p className="card-info">Your daily updates on the most played...</p>
             </div>
@@ -123,27 +137,26 @@ const EchoBeat = () => {
           <div className="cards-container">
             {Array(5).fill().map((_, index) => (
               <div key={index} className="card" onClick={() => window.location.href = 'abc.html'}>
-                <img src="assets/abcc.jpeg" className="card-image" alt="Top 50 - Global" />
+                <img src={imagee} className="card-image" alt="Top 50 - Global" />
                 <p className="card-title">Top 50 - Global</p>
                 <p className="card-info">Your daily updates on the most played...</p>
               </div>
             ))}
           </div>
-
           <h4>Featured Charts</h4>
           <div className="cards-container">
             <div className="card" onClick={() => window.location.href = 'abc.html'}>
-              <img src="assets/abcc.jpeg" className="card-image" alt="Top 50 - Global" />
+              <img src="card3img.jpeg" className="card-image" alt="Top 50 - Global" />
               <p className="card-title">Top 50 - Global</p>
               <p className="card-info">Your daily updates on the most played...</p>
             </div>
             <div className="card" onClick={() => window.location.href = 'abc.html'}>
-              <img src="assets/abcc.jpeg" className="card-image" alt="Top Songs - India" />
+              <img src="card3img.jpeg" className="card-image" alt="Top Songs - India" />
               <p className="card-title">Top Songs - India</p>
               <p className="card-info">Your daily updates on the most played...</p>
             </div>
             <div className="card" onClick={() => window.location.href = 'abc.html'}>
-              <img src="assets/abcc.jpeg" className="card-image" alt="Top 50 - Global" />
+              <img src="card3img.jpeg" className="card-image" alt="Top 50 - Global" />
               <p className="card-title">Top 50 - Global</p>
               <p className="card-info">Your daily updates on the most played...</p>
             </div>
@@ -166,6 +179,8 @@ const EchoBeat = () => {
             <img src={nextIcon} className="player-control-icon" alt="Next" onClick={playNext} />
             <img src={repeatIcon} className="player-control-icon" alt="Repeat" onClick={toggleRepeat} />
           </div>
+          {/* <audio src="" id='audio'></audio> */}
+          <audio id='audio'  ref={audioReff}  onEnded={() => setIsPlaying(false)}></audio>
           <div className="playback-bar">
             <span className="curr-time time">{currentTime.toFixed(2)}</span>
             <input

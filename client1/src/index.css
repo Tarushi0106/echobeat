@@ -571,9 +571,13 @@ label {
 body {
     min-height: 100vh;
     background: linear-gradient(to top, #b3e5fc, #ffcccb);
+    /* padding-bottom: 10rem; */
 }
 
-s
+#root{
+    padding-bottom: 15rem;
+    width: 100%;
+}
 
 /* Logo */
 #logo-1 {
@@ -962,7 +966,4 @@ s
 
 }
 
-#root{
-    width: 100%;
-}
 
