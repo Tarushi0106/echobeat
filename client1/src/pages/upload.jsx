@@ -54,7 +54,7 @@ const Upload = () => {
           <input
             type="text"
             className="input-field"
-            id="title"
+            id="stitle"
             name="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}

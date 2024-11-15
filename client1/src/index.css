@@ -1,17 +1,17 @@
-body{
+body {
 
-  
+
 
     /* background-color: wheat; */
     background: linear-gradient(to top, #b3e5fc, #ffcccb);
     /* background-color:   #d47f55; */
 
 
-    font-family: "Plus Jakarta Sans", sans-serif ;
+    font-family: "Plus Jakarta Sans", sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    
+
 }
 
 
@@ -19,18 +19,18 @@ body{
 
 
 
- /* upload css  */
+/* upload css  */
 
 
 
 
-.upload-container{
-max-width:500px;
-margin: 50px auto;
-padding: 20px;
-background-color: #fff;
-border-radius: 5px;
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.upload-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -52,57 +52,38 @@ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
 
 
-  
-  
-  
-.logo-img{
+
+
+
+.logo-img {
     height: 3rem;
 }
 
 
 
+
 .musicplayer {
-    background-color: #F8F9FA;
-    position: fixed;
-    bottom: 0px;
-    left: 0; /* Added to ensure it's aligned to the left */
-    right: 0; /* This ensures it spans the full width of the screen */
-    width: 100%; /* Ensure the player takes the full width of the screen */
-    height: 72px;
     display: flex;
-    justify-content: space-between; /* Spacing out elements within the player */
+    justify-content: center;
     align-items: center;
-    border-top: 1px solid #ddd; /* Optional: Add a top border for better separation */
-    padding: 0 1rem; /* Added padding for spacing between edges and content */
 }
 
 .album {
     width: 25%;
-    display: flex;
-    justify-content: center; /* Centering album artwork */
-    align-items: center;
 }
 
 .player {
     width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .controls {
     width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .player-control-icon {
-    height: 1.75rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1.75rem;
     opacity: 0.7;
-    cursor: pointer; /* Added cursor for interactivity */
 }
 
 .player-control-icon:hover {
@@ -113,6 +94,7 @@ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .playback-bar {
@@ -120,26 +102,27 @@ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     justify-content: center;
     align-items: center;
     margin-top: 0.3rem;
+
 }
 
 .play-button {
     opacity: 1;
     height: 2rem;
-    cursor: pointer; /* Added cursor for interactivity */
 }
 
 .progress-bar {
-    width: 70%; /* Adjust width for better fit */
+    width: 70%;
     appearance: none;
     background-color: transparent;
     cursor: pointer;
-    margin: 0 10px; /* Adds some spacing around the progress bar */
+
 }
 
 .progress-bar::-webkit-slider-runnable-track {
     background-color: #ddd;
     height: 0.2rem;
     border-radius: 100px;
+
 }
 
 .progress-bar::-webkit-slider-thumb {
@@ -149,25 +132,51 @@ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     background-color: #1bd760;
     border-radius: 50%;
     margin-top: -6px;
-    border-radius: 50%;
 }
+
+
+
+
+
+.musicplayer {
+    background-color: #F8F9FA;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    /* Added to ensure it's aligned to the left */
+    right: 0;
+    /* This ensures it spans the full width of the screen */
+    width: 100%;
+    /* Ensure the player takes the full width of the screen */
+    /* height: 72px; */
+    display: flex;
+    justify-content: center;
+    /* Spacing out elements within the player */
+    align-items: center;
+    border-top: 1px solid #ddd;
+    /* Optional: Add a top border for better separation */
+    /* padding: 0 1rem; Added padding for spacing between edges and content */
+}
+
+
 
 /* Optional: Additional styles for better accessibility */
 .progress-bar:focus {
-    outline: none; /* Removes focus outline for slider */
+    outline: none;
+    /* Removes focus outline for slider */
 }
 
-.time{
+.time {
     margin-right: 0.5rem;
     margin-left: 0.5rem;
 }
 
-.logo{
+.logo {
     font-size: 1.75rem;
 }
 
 
-.sidebar{
+.sidebar {
     background-color: #f8f9fa8f;
 
     width: 340px;
@@ -180,44 +189,50 @@ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
 /* Navbar Styling */
 .navbar {
-    
+
     padding: 1rem 2rem;
- 
-  }
-  
-  .mainnav {
+
+}
+
+.navvv {
+    width: 100% !important;
+}
+
+.mainnav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-  }
-  
-  .navbar-brand {
+}
+
+.navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
     display: flex;
     align-items: center;
-  }
-  
-  .logo-img {
-    width: 60px; /* Adjust logo size */
+}
+
+.logo-img {
+    width: 60px;
+    /* Adjust logo size */
     height: auto;
-  }
-  
-  .searchboxx {
+}
+
+.searchboxx {
     display: flex;
     align-items: center;
-  }
-  
-  .searchboxx input {
+}
+
+.searchboxx input {
     padding: 0.5rem;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 0.25rem;
-    width: 200px; /* Set width of search input */
-  }
-  
-  .searchboxx button {
+    width: 200px;
+    /* Set width of search input */
+}
+
+.searchboxx button {
     background-color: #28a745;
     color: white;
     border: none;
@@ -225,88 +240,95 @@ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-left: 0.5rem;
     border-radius: 0.25rem;
     cursor: pointer;
-  }
-  
-  .searchboxx button:hover {
+}
+
+.searchboxx button:hover {
     background-color: #218838;
-  }
-  
-  .navnav {
+}
+
+.navnav {
     display: flex;
     justify-content: flex-end;
-  }
-  
-  .navbar-nav {
+}
+
+.navbar-nav {
     display: flex;
     align-items: center;
-  }
-  
-  .nav-item {
+}
+
+.nav-item {
     margin: 0 1rem;
-  }
-  
-  .nav-link {
+}
+
+.nav-link {
     text-decoration: none;
     color: #333;
     font-size: 1rem;
     font-weight: 500;
-  }
-  
-  .nav-link:hover {
-    color: #28a745; /* Green color on hover */
+}
+
+.nav-link:hover {
+    color: #28a745;
+    /* Green color on hover */
     text-decoration: underline;
-  }
-  
-  .nav-item.active .nav-link {
-    color: #28a745; /* Active link color */
+}
+
+.nav-item.active .nav-link {
+    color: #28a745;
+    /* Active link color */
     font-weight: bold;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .mainnav {
-      flex-direction: column;
-      align-items: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
-  
+
     .searchboxx {
-      margin-top: 1rem;
-      width: 100%;
+        margin-top: 1rem;
+        width: 100%;
     }
-  
+
     .navbar-nav {
-      flex-direction: column;
-      margin-top: 1rem;
+        flex-direction: column;
+        margin-top: 1rem;
     }
-  
+
     .nav-item {
-      margin: 0.5rem 0;
+        margin: 0.5rem 0;
     }
-  
+
     .navbar-brand {
-      margin-bottom: 1rem;
+        margin-bottom: 1rem;
     }
-  }
-  
+}
+
 
 /* footer */
-.f-info-links a{
+.f-info-links a {
     text-decoration: none;
 }
-.f-info-links a:hover{
+
+.f-info-links a:hover {
     text-decoration: underline;
 }
-.f-info-links,.f-info-socials, .f-info-brand{
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.f-info-socials i{
+.f-info-socials i {
     font-size: 1.2rem;
     margin-right: 1rem;
 }
-.f-info{
+
+.f-info {
     /* text-align: center; */
     height: 8rem;
     display: flex;
@@ -314,27 +336,28 @@ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     background-color: #ebebeb;
 }
 
-footer{
+footer {
     width: 100%;
     margin-top: 10rem;
     bottom: 0px;
 }
 
-.main2{
+.main2 {
     display: flex;
     align-items: center;
     /* justify-content: center; */
 }
 
-.main2-1{
-    flex:1;
+.main2-1 {
+    flex: 1;
 }
-.box1{
+
+.box1 {
     border-right: solid black 1px;
     margin-right: 1rem;
 }
 
-.uppermain{
+.uppermain {
     margin-bottom: 5rem !important;
 }
 
@@ -376,15 +399,35 @@ label {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-#username{
+#username {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#password {
+
+#email {
     width: 100%;
     padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#phone{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#message,#password{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#genre, #description,#artist, #stitle{
+    width: 50%;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
@@ -402,23 +445,29 @@ label {
 #login-btn:hover {
     background-color: #4cae4c;
 }
+
 /* Styling for the Upload button with grey box shadow */
 .green-btn {
     width: 100%;
     padding: 10px;
-    background-color: #5cb85c; /* Green background */
-    color: white; /* White text */
+    background-color: #5cb85c;
+    /* Green background */
+    color: white;
+    /* White text */
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Grey box-shadow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Grey box-shadow */
 }
 
 .green-btn:hover {
-    background-color: #4cae4c; /* Darker green on hover */
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+    background-color: #4cae4c;
+    /* Darker green on hover */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+    /* Darker shadow on hover */
 }
 
 
@@ -439,16 +488,18 @@ label {
 
 
 
-.main{
+.main {
     display: flex;
     height: 100vh;
     padding: 0.5rem;
 }
 
-.main-content{
+.main-content {
     /* background-color: #f8f9fa8f; */
     flex: 1;
     border-radius: 1rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
     /* overflow: auto; */
     overflow-y: hidden;
     padding-right: 15px;
@@ -459,34 +510,34 @@ label {
 
 /* cards */
 
-.cards-container{
+.cards-container {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 0.5rem;
 }
 
-.card{
+.card {
     background-color: #f8f9fa8f;
     border-radius: 0.5rem;
-    width: 200px ;
+    width: 200px;
     padding: 1rem;
     margin-left: 1.5rem;
     margin-top: 1rem;
     cursor: pointer;
 }
 
-.card-image{
+.card-image {
     border-radius: 0.5rem;
     width: 100%;
 
 }
 
-.card-title{
+.card-title {
     font-weight: 600;
     margin-top: 10px;
 }
 
-.card-info{
+.card-info {
     font-size: 0.85rem;
     opacity: 0.8;
     margin-bottom: 0;
@@ -520,7 +571,9 @@ label {
 body {
     min-height: 100vh;
     background: linear-gradient(to top, #b3e5fc, #ffcccb);
-}s
+}
+
+s
 
 /* Logo */
 #logo-1 {
@@ -651,12 +704,15 @@ body {
         transform: translateX(-50%);
         opacity: 0;
     }
+
     50% {
         opacity: 0.2;
     }
+
     70% {
         opacity: 0.5;
     }
+
     100% {
         opacity: 1;
         transform: translateX(0%);
@@ -902,6 +958,11 @@ body {
 
 .iconss i {
     display: inline-flex;
-   
+
 
 }
+
+#root{
+    width: 100%;
+}
+

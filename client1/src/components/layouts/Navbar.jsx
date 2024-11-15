@@ -5,7 +5,7 @@ import logo from './download.png'; // Ensure the logo image exists at this path
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary navvv">
       <div className="container-fluid mainnav">
         <NavLink className="navbar-brand mb-1 logo" to="/">
           <img src={logo} className="logo-img" alt="EchoBeat Logo" />

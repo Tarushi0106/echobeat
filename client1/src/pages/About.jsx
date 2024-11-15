@@ -96,7 +96,7 @@ export const About = () => {
               <i className="fa-brands fa-square-instagram"></i>
               <i className="fa-brands fa-linkedin-in"></i>
             </div>
-            <div className="f-info-brand"> &copy; Wanderlust Pvt Limited</div>
+            <div className="f-info-brand"> &copy; EchoBeat Pvt Limited</div>
             <div className="f-info-links">
               <a href="/privacy">Privacy</a>
               <a href="/terms">Terms</a>

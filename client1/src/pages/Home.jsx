@@ -20,6 +20,7 @@ const EchoBeat = () => {
   const [currentTime, setCurrentTime] = useState(0); // For tracking current playback time
   const [duration, setDuration] = useState(0); // For the total song duration
 
+  const audioReff = useRef(null);
   const audioRef = useRef(new Audio(playlist[currentSongIndex])); // Reference for audio
 
   // Load the current song when the currentSongIndex changes
@@ -106,9 +107,6 @@ const EchoBeat = () => {
         <title>EchoBeat</title>
       </header>
 
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid mainnav"></div>
-      </nav>
 
       <div className="main">
         <div className="main-content">
@@ -181,6 +179,8 @@ const EchoBeat = () => {
             <span className="tot-time time">{duration.toFixed(2)}</span>
           </div>
         </div>
+        <div class="controls"></div>
+
       </div>
     </>
   );
