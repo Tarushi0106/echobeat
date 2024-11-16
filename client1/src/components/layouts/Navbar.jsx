@@ -17,7 +17,7 @@ export const Navbar = () => {
             placeholder="Search"
             aria-label="Search"
           />
-          <button className="btn btn-outline-success" type="submit" style={{width: 120, height:40}}>Search</button>
+          <button className="btn btn-outline-success" type="submit" style={{width: 100, height:40}}>Search</button>
         </form>
         <div className="navnav">
           <span className="navbar-nav me-auto mb-2 mb-lg-0">
