@@ -195,7 +195,8 @@ body {
 }
 
 .navvv {
-    width: 100% !important;
+    /* width: 100% !important; */
+    padding: 0.5rem;
 }
 
 .mainnav {
@@ -468,6 +469,10 @@ label {
     /* Darker green on hover */
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
     /* Darker shadow on hover */
+}
+
+.uploadbutton{
+    width: 120px;
 }
 
 

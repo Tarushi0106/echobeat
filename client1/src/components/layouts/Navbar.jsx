@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css'; // Ensure the CSS file path is correct
-import logo from './download.png'; // Ensure the logo image exists at this path
+import logo from './logo.png'; // Ensure the logo image exists at this path
 
 export const Navbar = () => {
   return (
@@ -17,7 +17,7 @@ export const Navbar = () => {
             placeholder="Search"
             aria-label="Search"
           />
-          {/* <button className="btn btn-outline-success" type="submit">Submi</button> */}
+          <button className="btn btn-outline-success" type="submit" style={{width: 120, height:40}}>Search</button>
         </form>
         <div className="navnav">
           <span className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -36,15 +36,15 @@ export const Navbar = () => {
             <NavLink className="nav-item nav-link" to="/about">
               About
             </NavLink>
+            <NavLink className="play-now-button nav-item uploadbutton" to="/upload">
+              Upload Now
+            </NavLink>
           </span>
         </div>
 
         {/* Add the Upload Now button */}
         <div>
           <span className="navbar-nav me-auto mb-2 mb-lg-0">
-            <NavLink className="play-now-button nav-item" to="/upload">
-              Upload Now
-            </NavLink>
           </span>
         </div>
       </div>
