@@ -4,6 +4,7 @@ import logo from './logo.png';
 import shuffleIcon from './shufflenew.png';
 import prevIcon from './prevnew.png';
 import playIcon from './playnew.png';
+import pauseIcon from './pausenew.png';
 import nextIcon from './nextnew.png';
 import repeatIcon from './repeatnew.png';
 import song1 from './song1.mp3';
@@ -57,18 +58,19 @@ const EchoBeat = () => {
       audioReff.current.play();
       setIsPlaying(true);
     }
-  
+    setButtonImage(pauseIcon);
+    
     // Update the play state
   };
   
   const togglePlayPause = () => {
     if (isPlaying) {
       audioReff.current.pause();
-      setButtonImage('assets/play.png');
+      setButtonImage(playIcon);
       setIsPlaying(false);
     } else {
       audioReff.current.play();
-      setButtonImage('assets/pause.png');
+      setButtonImage(pauseIcon);
       setIsPlaying(true);
     }
   };
@@ -130,7 +132,7 @@ const EchoBeat = () => {
             <img src={shuffleIcon} className="player-control-icon" alt="Shuffle"  />
             <img src={prevIcon} className="player-control-icon" alt="Previous"  />
             <img
-              src={playIcon}
+              src={buttonImage}
               className="player-control-icon play-button"
               // alt={isPlaying ? "Pause" : "Play"} 
               onClick={togglePlayPause}
