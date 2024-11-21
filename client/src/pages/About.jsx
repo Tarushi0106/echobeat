@@ -15,8 +15,8 @@ export const About = () => {
               <div className="swiper-slide" key={index}>
                 <img src={`./public/${image}`} alt="Travel Slide" />
                 <div className="img-overlay">
-                  <p>Let's Travel The World With Us</p>
-                  <h2>Discover The World With Our Guide</h2>
+                  <p className='tagline'>Feel the rhythm, embrace the vibes, and let the melody guide you!</p>
+                  
                 </div>
               </div>
             ))}
@@ -74,7 +74,7 @@ export const About = () => {
           <div className="container-2">
             <p className="heading-1">CHOOSE YOUR SONG</p>
             <h2 className="heading-2">Popular <span>MUSIC</span> ONLY FOR YOU</h2>
-            <div className="choice-wrapper">
+            {/* <div className="choice-wrapper">
               {[
                 { title: 'Maldives Tour', price: '₹ 1,60,000', img: 'img1.jpg' },
                 { title: 'UK Tour', price: '₹ 1,55,000', img: 'img1.jpg' },
@@ -87,7 +87,7 @@ export const About = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </section>
 

@@ -658,6 +658,7 @@ body {
 
 .swiper-wrapper {
     height: 200px;
+    
 }
 
 .swiper-slider img {
@@ -674,7 +675,10 @@ body {
     font-family: "Poppins";
     transform: translate(-50%, -50%);
 }
-
+.tagline{
+    font-size: 50px !important;
+    /* color: whitesmoke !important; */
+}
 .img-overlay p {
     font-size: 1rem;
     letter-spacing: 8px;

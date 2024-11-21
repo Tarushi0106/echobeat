@@ -1,12 +1,13 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import './home.css';
-import logo from './logo.png';
 import shuffleIcon from './shufflenew.png';
 import prevIcon from './prevnew.png';
 import playIcon from './playnew.png';
 import nextIcon from './nextnew.png';
+import pauseIcon from './pausenew.png';
 import repeatIcon from './repeatnew.png';
+import forwardIcon from './nextnew.png';  // Add forward icon
+import backwardIcon from './prevnew.png'; // Add backward icon
 import song1 from './song1.mp3';
 import song2 from './song2.mp3';
 import song3 from './song3.mp3';
@@ -64,51 +65,54 @@ class DoublyLinkedList {
 const EchoBeat = () => {
   const songs = [
     { src: song1, image: song1img },
-    // { src: song2, image: song2img },
+    { src: song2, image: song2img },
     { src: song3, image: song3img },
     { src: song4, image: song4img },
     { src: song5, image: song5img },
   ];
+  const [buttonImage, setButtonImage] = useState(playIcon);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-
+  
   const audioRef = useRef(null);
   const playbackHistory = useRef(new DoublyLinkedList());
   const songStack = useRef([]);
-
+  
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.ontimeupdate = () => {
         setCurrentTime(audioRef.current.currentTime);
       };
-
+      
       audioRef.current.onloadedmetadata = () => {
         setDuration(audioRef.current.duration);
       };
-
+      
       audioRef.current.onended = () => {
         handleNext();
       };
     }
-
+    
     // Add all songs to doubly linked list
     songs.forEach((song) => playbackHistory.current.append(song));
   }, []);
-
+  
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
   };
-
+  
   const handlePlayPause = () => {
     if (isPlaying) {
       audioRef.current.pause();
+      setButtonImage(playIcon);
     } else {
       audioRef.current.play();
+      setButtonImage(pauseIcon);
     }
     setIsPlaying(!isPlaying);
   };
@@ -136,6 +140,18 @@ const EchoBeat = () => {
     }
   };
 
+  const handleForward = () => {
+    const nextIndex = (currentSongIndex + 1) % songs.length; // Skip 1 song forward
+    setCurrentSongIndex(nextIndex);
+    playSong(songs[nextIndex]);
+  };
+
+  const handleBackward = () => {
+    const prevIndex = (currentSongIndex - 1 + songs.length) % songs.length; // Skip 1 song backward
+    setCurrentSongIndex(prevIndex);
+    playSong(songs[prevIndex]);
+  };
+
   const playSong = (song) => {
     if (audioRef.current) {
       audioRef.current.pause(); // Pause current playback
@@ -145,7 +161,7 @@ const EchoBeat = () => {
       audioRef.current.load(); // Force reload to ensure the new song plays
       audioRef.current.play();
       setIsPlaying(true);
-
+      setButtonImage(pauseIcon);
       // Push the song onto the stack for undo
       songStack.current.push(song);
     }
@@ -180,16 +196,17 @@ const EchoBeat = () => {
 
       <div className="musicplayer">
         <div className="player">
-      
           <div className="player-controls">
             <img src={shuffleIcon} className="player-control-icon" alt="Shuffle" />
-            <img src={prevIcon} className="player-control-icon" alt="Previous" onClick={handlePrev} />
+            {/* <img src={prevIcon} className="player-control-icon" alt="Previous" onClick={handlePrev} /> */}
+            <img src={backwardIcon} className="player-control-icon" alt="Backward" onClick={handleBackward} /> {/* Backward button */}
             <img
-              src={playIcon}
+              src={buttonImage}
               className="player-control-icon play-button"
               onClick={handlePlayPause}
             />
-            <img src={nextIcon} className="player-control-icon" alt="Next" onClick={handleNext} />
+            {/* <img src={nextIcon} className="player-control-icon" alt="Next" onClick={handleNext} /> */}
+            <img src={forwardIcon} className="player-control-icon" alt="Forward" onClick={handleForward} /> {/* Forward button */}
             <img src={repeatIcon} className="player-control-icon" alt="Repeat" />
           </div>
 

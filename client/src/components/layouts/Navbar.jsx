@@ -33,9 +33,9 @@ export const Navbar = () => {
             <NavLink className="nav-item nav-link" to="/contact">
               Contact
             </NavLink>
-            <NavLink className="nav-item nav-link" to="/about">
+            {/* <NavLink className="nav-item nav-link" to="/about">
               About
-            </NavLink>
+            </NavLink> */}
           </span>
         </div>
 
